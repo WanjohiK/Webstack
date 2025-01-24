@@ -1,0 +1,130 @@
+/* General Reset */
+body, h1, h2, p, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+main {
+    background: white;
+    padding: 2rem;
+    width: 80%;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-list {
+    margin-bottom: 2rem;
+}
+
+.quiz-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-list li {
+    margin: 1rem 0;
+}
+
+.quiz-card {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    text-align: left;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.quiz-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn, .btn-login, .btn-logout {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-login {
+    background: #007bff;
+    color: white;
+    border: none;
+}
+
+.btn-login:hover {
+    background: #0056b3;
+}
+
+.btn-logout {
+    background: #f44336;
+    color: white;
+    border: none;
+}
+
+.btn-logout:hover {
+    background: #d32f2f;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #777;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Quiz Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Platform</h1>
+    </header>
+    <main>
+        <h2>Welcome to the Quiz Platform!</h2>
+        <p>To take the free quiz, you must create an account or log in.</p>
+
+        <div class="button-group">
+            <a href="{{ url_for('auth.register') }}" class="btn">Create an Account</a>
+            <a href="{{ url_for('auth.login') }}" class="btn-outline">Login</a>
+        </div>
+
+        <p class="text-center">Once logged in, you can access quizzes and track your progress.</p>
+    </main>
+</body>
+</html>

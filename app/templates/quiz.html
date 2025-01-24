@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ quiz.title }}</title>
+    <link rel="stylesheet" href="/static/quiz.css">
+    <script>
+        let timer = 300; // 5 minutes in seconds
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(timer / 60);
+            const seconds = timer % 60;
+            document.getElementById('timer').textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (--timer < 0) {
+                clearInterval(countdown);
+                document.querySelector('form').submit(); // Auto-submit when timer ends
+            }
+        }, 1000);
+    </script>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>{{ quiz.title }}</h1>
+        <h2>{{ quiz.description }}</h2>
+        <p id="timer" class="timer">Time Left: 5:00</p>
+        <p class="question-number">Question {{ question_number }} of {{ total_questions }}</p>
+
+        <form method="POST">
+            <p class="question"><strong>{{ question.text }}</strong></p>
+            <div class="options">
+                {% for key, value in question.options.items() %}
+                    <label>
+                        <input type="radio" name="answer" value="{{ key }}" required>
+                        {{ value }}
+                    </label>
+                {% endfor %}
+            </div>
+
+            {% if is_last_question %}
+                <p class="submit-confirmation">This is the last question. Do you wish to submit?</p>
+                <div class="button-group">
+                    <button type="submit" name="submit" value="yes">Submit Quiz</button>
+                    <button type="submit" name="submit" value="no">Next Question</button>
+                </div>
+            {% else %}
+                <div class="button-group">
+                    <button type="submit">Next Question</button>
+                </div>
+            {% endif %}
+
+            <div class="button-group">
+                <a href="{{ url_for('main.abandon_quiz', quiz_id=quiz.id) }}" class="btn-abandon">Abandon Quiz</a>
+                <a href="{{ url_for('auth.logout') }}" class="btn-logout">Logout</a>
+            </div>
+            
+        </form>
+    </div>
+
+</body>
+</html>
