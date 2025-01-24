@@ -63,7 +63,7 @@ Ensure the following are installed on your system:
 
 6. Access the application at:
    ```
-   http://127.0.0.1:8000/  # Default Django
+
    http://127.0.0.1:5000/  # Default Flask
    ```
 
